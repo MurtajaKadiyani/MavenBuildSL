@@ -30,18 +30,15 @@ pipeline
 	
 		stage('deployment')
 		{
-            steps 
-			{
-                deploy adapters: [tomcat(
-                    url: 'http://52.172.211.198:8080/', 
-                    credentialsId: 'TomcatCreds',
-					version: '10'
-                )], 
-                war: "target/*.war",
-                contextPath: 'app'
-            }
-        }
-		
+		steps
+		{
+		//deploy adapters: [tomcat9(credentialsId: 'TomcatCreds' path: '', url: 'http://52.90.187.236:8080/')], contextPath: 'counterwebapp', war: 'target/*.war'
+		deploy adapters: [tomcat9(url: 'http://52.172.211.198:8080/', 
+                              credentialsId: 'TomcatCreds')], 
+                     war: "target/*.war",
+                     contextPath: 'app'
+		}
+		}
 		stage('Notification')
 		{
 			steps
