@@ -39,9 +39,7 @@ pipeline
                 war: "target/*.war",
                 contextPath: 'app'
             }
-          }
-			
-		}
+        }
 		
 		stage('Notification')
 		{
@@ -54,5 +52,6 @@ pipeline
 			}
 		}
 	}
-   }
+}
+
 
