@@ -30,8 +30,6 @@ pipeline
 	
 		stage('deployment')
 		{
-		  stage('Deploy to tomcat') 
-		  {
             steps 
 			{
                 deploy adapters: [tomcat9(
